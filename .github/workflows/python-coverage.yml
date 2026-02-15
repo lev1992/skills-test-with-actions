@@ -1,6 +1,9 @@
-name: Python Converage
+name: Python Coverage
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
