@@ -1,6 +1,9 @@
-name: Python Converage
+name: Python Coverage
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -31,7 +34,7 @@ jobs:
       - name: Run tests and generate coverage details
         run: pytest --cov=src
       - name: Coverage comment
-        uses: py-cov-action/python-coverage-comment@v3
+        uses: py-cov-action/python-coverage-comment-action@v3
         with:
           GITHUB_TOKEN: ${{ github.token }}
           MINIMUM_GREEN: 90
